@@ -15,8 +15,16 @@ android {
 //        multiDexEnabled true
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField("String", "HOST", '"http://192.168.6.41:8080"')
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField("String", "HOST", '"http://192.168.6.41:8080"')
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -35,4 +43,14 @@ dependencies {
     implementation project(':xml')
     implementation project(':keyboard')
     implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+    annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
+    //view
+    annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
+        exclude module: 'annotation'
+    }
+    //刷新库
+    implementation rootProject.ext.dependencies["smart-refresh"]
+    implementation rootProject.ext.dependencies["smart-refresh-header"]
+    //tabLayout
+    implementation rootProject.ext.dependencies["flyco-tab-layout"]
 }

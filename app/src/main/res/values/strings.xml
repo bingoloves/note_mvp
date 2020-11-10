@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Note</string>
+    <string name="app_name">NoteMvp</string>
     <string name="errorMessage">不能为空</string>
 </resources>

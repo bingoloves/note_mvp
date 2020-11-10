@@ -3,4 +3,7 @@
     <declare-styleable name="PhotoView">
         <attr name="radius" format="dimension"/>
     </declare-styleable>
+    <declare-styleable name="CustomViewPager">
+        <attr name="isScroll" format="boolean"/>
+    </declare-styleable>
 </resources>

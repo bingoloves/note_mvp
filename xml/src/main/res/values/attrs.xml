@@ -117,7 +117,7 @@
         <attr name="bl_unPressed_solid_color" format="color" />
         <attr name="bl_unFocused_solid_color" format="color" />
 
-        <attr name="bl_stroke_position" format="flags">
+        <attr name="bl_stroke_position">
             <flag name="left" value="2" />
             <flag name="top" value="4" />
             <flag name="right" value="8" />
